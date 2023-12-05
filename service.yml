@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fortigate-exporter-svc
+  labels:
+    app: fortigate-exporter
+spec:
+  type: ClusterIP
+  selector:
+    app: fortigate-exporter
+  ports:
+  - name: fortigate-scrape
+    port: 9710

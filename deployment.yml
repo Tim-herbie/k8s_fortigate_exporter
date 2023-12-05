@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fortigate-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fortigate-exporter
+  template:
+    metadata:
+      labels:
+        app: fortigate-exporter
+    spec:
+      containers:
+      - name: fortigate-exporter
+        image: kifeo/fortigate_exporter
+        ports:
+        - containerPort: 9710
+        volumeMounts:
+          - name: fortigate-credentials
+            mountPath: /config
+      volumes:
+        - name: fortigate-credentials
+          secret:
+            secretName: fortigate-credentials

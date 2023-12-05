@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: fortigate-exporter
+  labels:
+    app: fortigate-exporter
+spec:
+  selector:
+    matchLabels:
+      app: fortigate-exporter
+  endpoints:
+    - path: /probe
+      port: fortigate-scrape
+      interval: 15s
+      targetPort: 9710
+      params:
+        target:
+        - {{URL}}
