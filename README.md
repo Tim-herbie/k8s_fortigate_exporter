@@ -1,6 +1,6 @@
 # Fortigate Prometheus exporter for Kubernetes
 
-This repository demonstrates only how to deploy the prometheus exporter [fortigate-exporter](https://github.com/bluecmd/fortigate_exporter) on Kubernetes to monitor one fortigate firewall. 
+This repository demonstrates how to deploy the prometheus exporter [fortigate-exporter](https://github.com/bluecmd/fortigate_exporter) on Kubernetes to monitor one fortigate firewall. 
 > **Info: It is possible to monitor multiple fortigates and also only specific metrics** 
 
 ## Requirements
@@ -71,7 +71,7 @@ You have now completed all preparations! Now it´s time to create the `fortigate
 
 ```yml
 # fortigate.env
-URL=https://fw.example.comr
+URL=https://fw.example.com
 FORTIGATE_API_TOKEN=my-secure-fortigate-api-token
 ```
 
@@ -80,3 +80,5 @@ FORTIGATE_API_TOKEN=my-secure-fortigate-api-token
 ```
 make all
 ```
+
+After this you should be able to see some metrics from your fortigate firewall in Prometheus!
