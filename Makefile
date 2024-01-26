@@ -10,7 +10,7 @@ prep:
 	kubectl create namespace $(NAMESPACE) --dry-run=client -o yaml | kubectl apply -f -
 
 deployment:
-	printf '%s' "$$(cat secret.yml | sed 's|{{FORTIGATE_EXPORTER_SECRET}}|$(FORTIGATE_EXPORTER_SECRET)|g')" | kubectl apply -f -
+	printf '%s' "$$(cat secret.yml | sed 's|{{FORTIGATE_EXPORTER_SECRET}}|$(FORTIGATE_EXPORTER_SECRET)|g')" | kubectl -n $(NAMESPACE) apply -f -
 	kubectl -n $(NAMESPACE) apply -f deployment.yml
 	kubectl -n $(NAMESPACE) apply -f service.yml
 
