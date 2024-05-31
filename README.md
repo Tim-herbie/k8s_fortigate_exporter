@@ -1,6 +1,6 @@
 # Fortigate Prometheus exporter for Kubernetes
 
-This repository demonstrates how to deploy the prometheus exporter [fortigate-exporter](https://github.com/bluecmd/fortigate_exporter) on Kubernetes to monitor one fortigate firewall. 
+This repository demonstrates how to deploy the prometheus exporter [fortigate-exporter](https://github.com/bluecmd/fortigate_exporter) on Kubernetes to monitor a fortigate firewall. 
 > **Info: It is possible to monitor multiple fortigates and also only specific metrics** 
 
 ## Requirements
@@ -12,6 +12,10 @@ This repository demonstrates how to deploy the prometheus exporter [fortigate-ex
 
 ### Already installed within your Kubernetes Cluster
 - Prometheus
+
+### Fortigate requirements
+Please ensure to use a valid and trusted HTTPS server certificate for your firewall.
+> **Note: If you are using a self signed certificate, make sure to use this image: `therbert6/fortigate-exporter:0.1-insecure`** 
 
 ## Installation
 
