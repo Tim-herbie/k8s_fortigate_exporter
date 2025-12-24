@@ -1,3 +1,8 @@
+> [!CAUTION]
+> ## This repository has been archived
+> Since I have switched to a different firewall vendor, this repository has been archived.
+>
+
 <a name="readme-top"></a>
 
 [![Contributors][contributors-shield]][contributors-url]
